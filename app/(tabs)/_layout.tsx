@@ -15,7 +15,7 @@ export default function TabLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
+        headerShown: true,
         tabBarButton: HapticTab,
         tabBarBackground: TabBarBackground,
         tabBarStyle: Platform.select({
@@ -23,7 +23,9 @@ export default function TabLayout() {
             // Use a transparent background on iOS to show the blur effect
             position: 'absolute',
           },
-          default: {},
+          default: {
+            width: '100%',
+          },
         }),
       }}>
       <Tabs.Screen
@@ -31,6 +33,7 @@ export default function TabLayout() {
         options={{
           title: 'Home',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          tabBarActiveTintColor: "#000000",
         }}
       />
       <Tabs.Screen
@@ -38,6 +41,15 @@ export default function TabLayout() {
         options={{
           title: 'Explore',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarActiveTintColor: "#000000",
+        }}
+      />
+      <Tabs.Screen
+        name="extras"
+        options={{
+          title: 'Extras',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="mountain.2.fill" color={color} />,
+          tabBarActiveTintColor: "#000000",
         }}
       />
     </Tabs>
