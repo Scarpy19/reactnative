@@ -32,6 +32,15 @@ export default function HomeScreen() {
             })}
           </ThemedText>{' '}
           to open developer tools.
+          Press{' '}
+          <ThemedText type="defaultSemiBold">
+            {Platform.select({
+              ios: 'cmd + r',
+              android: 'cmd + r',
+              web: 'F5'
+            })}
+          </ThemedText>{' '}
+          to reload the app.
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
